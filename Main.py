@@ -1,9 +1,9 @@
 """
-Implementation of "Double-Masked Error Corretion Codes Transformer" (DM ECCT)
-Coding and Cryptography Lab (CCL)
-Department of Electrical and Computer Engineering,
-Seoul National University, South Korea.
-@author: Seong-Joon Park, joon2247@snu.ac.kr
+Implementation of "Multiple-Masks Error Correction Code Transformer for Short Block Codes" (MM ECCT)
+Information and Intelligence Lab (IIL)
+Department of Electrical Engineering, Graduate School of Artificial Intelligence
+Pohang University of Science and Technology (POSTECH), South Korea.
+@author: Seong-Joon Park, seongjoon@postech.ac.kr, joonpark2247@gmail.com
 """
 
 from __future__ import print_function
@@ -14,7 +14,7 @@ from torch.utils.data import DataLoader
 from torch.utils import data
 from datetime import datetime
 import logging
-from Codes_git import *
+from Codes import *
 import time
 from torch.optim.lr_scheduler import CosineAnnealingLR
 
@@ -56,6 +56,7 @@ if __name__ == '__main__':
     os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
     os.environ["CUDA_VISIBLE_DEVICES"] = args.gpus
     set_seed(args.seed)
+    
     ####################################################################
     
     if args.ecct_type == 'SM':
@@ -76,7 +77,9 @@ if __name__ == '__main__':
     code.pc_matrix = torch.from_numpy(H).long()
     code.pc_matrix2 = torch.from_numpy(H2).long()
     args.code = code
+    
     ####################################################################
+    
     model_dir = os.path.join('Results_ECCT',
                              args.code_type + '__Code_n_' + str(
                                  args.code_n) + '_k_' + str(
@@ -92,12 +95,7 @@ if __name__ == '__main__':
     logging.info(f"Path to model/logs: {model_dir}")
     logging.info(args)
 
-    
-    
-
-
 ##################################################################
-
 
 class ECC_Dataset(data.Dataset):
     def __init__(self, code, sigma, len, zero_cw=True):
@@ -131,8 +129,6 @@ class ECC_Dataset(data.Dataset):
         
         return m.float(), x.float(), z.float(), y.float(), magnitude.float(), syndrome.float(),syndrome2.float()
 
-
-##################################################################
 ##################################################################
 
 def train(model, device, train_loader, optimizer, epoch, LR):
@@ -231,9 +227,6 @@ def test(model, device, test_loader_list, EbNo_range_test, min_FER=100):
     return test_loss_list, test_loss_ber_list, test_loss_fer_list
 
 ##################################################################
-##################################################################
-##################################################################
-
 
 def main(args):
     code = args.code
@@ -245,6 +238,11 @@ def main(args):
 
     logging.info(model)
     logging.info(f'# of Parameters: {np.sum([np.prod(p.shape) for p in model.parameters()])}')
+    model_dir_f = os.path.join('Results_final',
+                             args.code_type + '__Code_n_' + str(
+                                 args.code_n) + '_k_' + str(
+                                 args.code_k) + '__' + str(args.N_dec)+ '_' + str(args.d_model) + '_' + str(args.ecct_type))
+    os.makedirs(model_dir_f, exist_ok=True)
     #################################
     EbNo_range_test = range(4, 7)
     EbNo_range_train = range(2, 8)
@@ -263,17 +261,10 @@ def main(args):
         if loss < best_loss:
             best_loss = loss
             torch.save(model, os.path.join(args.path, 'best_model'))
+            torch.save(model, os.path.join(model_dir_f, 'best_model'))
         if epoch % 300 == 0 or epoch in [1, args.epochs]:
             test(model, device, test_dataloader_list, EbNo_range_test)
     
-    model_dir_f = os.path.join('Results_final',
-                             args.code_type + '__Code_n_' + str(
-                                 args.code_n) + '_k_' + str(
-                                 args.code_k) + '__' + str(args.N_dec)+ '_' + str(args.d_model) + '_' + str(args.ecct_type))
-    os.makedirs(model_dir_f, exist_ok=True)
-    torch.save(model, os.path.join(model_dir_f, 'best_model'))
-##################################################################################################################
-##################################################################################################################
 ##################################################################################################################
 
 main(args)
