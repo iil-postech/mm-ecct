@@ -1,8 +1,11 @@
 """
-@author: Yoni Choukroun, choukroun.yoni@gmail.com
-Error Correction Code Transformer
-https://arxiv.org/abs/2203.14966
+Implementation of "Multiple-Masks Error Correction Code Transformer for Short Block Codes" (MM ECCT)
+Information and Intelligence Lab (IIL)
+Department of Electrical Engineering, Graduate School of Artificial Intelligence
+Pohang University of Science and Technology (POSTECH), South Korea.
+@author: Seong-Joon Park, seongjoon@postech.ac.kr, joonpark2247@gmail.com
 """
+
 from torch.nn import LayerNorm
 import torch
 import torch.nn as nn
@@ -136,15 +139,11 @@ class ECC_Transformer(nn.Module):
                 nn.init.xavier_uniform_(p)
 
     def forward(self, magnitude, syndrome,syndrome2):
-        
-        
         emb = torch.cat([magnitude, syndrome], -1).unsqueeze(-1)
         emb = self.src_embed.unsqueeze(0) * emb
         
-        
         emb2 = torch.cat([magnitude, syndrome2], -1).unsqueeze(-1)
         emb2 = self.src_embed.unsqueeze(0) * emb2
-        
         
         emb = self.decoder1(emb, self.src_mask)
         emb2 = self.decoder2(emb2, self.src_mask2)
@@ -220,8 +219,6 @@ class ECC_Transformer(nn.Module):
         self.register_buffer('src_mask', src_mask)
         self.register_buffer('src_mask2', src_mask2)
 
-
-############################################################
 ############################################################
 
 if __name__ == '__main__':
