@@ -1,9 +1,9 @@
 """
-Implementation of "Double-Masked Error Corretion Codes Transformer" (DM ECCT)
-Coding and Cryptography Lab (CCL)
-Department of Electrical and Computer Engineering,
-Seoul National University, South Korea.
-@author: Seong-Joon Park, joon2247@snu.ac.kr
+Implementation of "Multiple-Masks Error Correction Code Transformer for Short Block Codes" (MM ECCT)
+Information and Intelligence Lab (IIL)
+Department of Electrical Engineering, Graduate School of Artificial Intelligence
+Pohang University of Science and Technology (POSTECH), South Korea.
+@author: Seong-Joon Park, seongjoon@postech.ac.kr, joonpark2247@gmail.com
 """
 
 import numpy as np
