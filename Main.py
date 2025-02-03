@@ -84,7 +84,7 @@ if __name__ == '__main__':
                              args.code_type + '__Code_n_' + str(
                                  args.code_n) + '_k_' + str(
                                  args.code_k) + '__' + datetime.now().strftime(
-                                 "%d_%m_%Y_%H_%M_%S_" + str(args.N_dec)+ '_' + str(args.d_model)+ '_' + str(args.ecct_type)+ '_final'))
+                                 "%d_%m_%Y_%H_%M_%S_" + str(args.N_dec)+ '_' + str(args.d_model)+ '_' + str(args.ecct_type)))
     os.makedirs(model_dir, exist_ok=True)
     args.path = model_dir
     handlers = [
