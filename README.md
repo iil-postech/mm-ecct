@@ -23,7 +23,7 @@ python Main.py --ecct_type=DM --gpu=0 --N_dec=3 --d_model=128 --code_type=BCH --
 
 # Code arguments
 ```
---ecct_type                ECCT type, 'SM' (systematic mask) or 'DM' (double-masks)
+--ecct_type                ECCT type, 'SM' (systematic mask) or 'DM' (MM ECCT with double-masks)
 --epochs                   number of epoch
 --batch_size               batch size
 --code_type                code type, 'BCH' or 'POLAR'
