@@ -40,7 +40,7 @@ python Main.py --ecct_type=DM --gpu=0 --N_dec=3 --d_model=128 --code_type=BCH --
   title={Multiple-Masks Error Correction Code Transformer for Short Block Codes},
   author={Park, Seong-Joon and Kwak, Hee-Youl and Kim, Sanghyo and Kim, Sunghwan and Kim, Yongjune and No, Jong-Seon},
   journal={arXiv preprint arXiv:2405.01033},
-  year={2024}
+  year={2025}
 }
 ```
 
