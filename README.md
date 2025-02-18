@@ -36,10 +36,10 @@ python Main.py --ecct_type=DM --gpu=0 --N_dec=3 --d_model=128 --code_type=BCH --
 # Citation
 
 ```
-@article{Park2024Multiple,
+@article{Park2024multiple,
   title={Multiple-Masks Error Correction Code Transformer for Short Block Codes},
   author={Park, Seong-Joon and Kwak, Hee-Youl and Kim, Sanghyo and Kim, Sunghwan and Kim, Yongjune and No, Jong-Seon},
-  journal={arXiv preprint arXiv:2405.01033},
+  journal={IEEE Journal on Selected Areas in Communications (JSAC)},
   year={2025}
 }
 ```
