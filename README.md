@@ -3,7 +3,7 @@
 This repository is the official implementation of the IEEE Journal on Selected Areas in Communications "Multiple-Masks Error Correction Code Transformer for Short Block Codes"
 
 # [Paper](https://arxiv.org/abs/2308.08128)
-<p align="center"><img src="https://github.com/user-attachments/assets/c195180e-580e-4ffc-85d2-75b43dd53ac9" width="400"/>
+<p align="center"><img src="https://github.com/user-attachments/assets/7311e9e4-ff7e-4c3d-9ffd-de359e825214" width="400"/>
 
 # Experimental Results
 <p align="center"><img src="https://github.com/user-attachments/assets/011f01df-7d15-4d44-a277-184a416a02c1" width="600"/>
