@@ -42,9 +42,9 @@ python Main.py --ecct_type=DM --gpu=0 --N_dec=3 --d_model=128 --code_type=BCH --
   journal = {IEEE Journal on Selected Areas in Communications (JSAC)},
   volume = 43,
   number = 7,
-  page = {2518--2529},
+  pages = {2518--2529},
   month = jul,
-  year={2025}
+  year = {2025}
 }
 ```
 
