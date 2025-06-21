@@ -37,10 +37,15 @@ python Main.py --ecct_type=DM --gpu=0 --N_dec=3 --d_model=128 --code_type=BCH --
 
 ```
 @article{Park2024multiple,
-  title={Multiple-Masks Error Correction Code Transformer for Short Block Codes},
-  author={Park, Seong-Joon and Kwak, Hee-Youl and Kim, Sanghyo and Kim, Sunghwan and Kim, Yongjune and No, Jong-Seon},
-  journal={IEEE Journal on Selected Areas in Communications (JSAC)},
+  title = {Multiple-Masks Error Correction Code Transformer for Short Block Codes},
+  author = {Park, Seong-Joon and Kwak, Hee-Youl and Kim, Sanghyo and Kim, Sunghwan and Kim, Yongjune and No, Jong-Seon},
+  journal = {IEEE Journal on Selected Areas in Communications (JSAC)},
+  volume = 43,
+  number = 7,
+  page = {2518--2529},
+  month = jul,
   year={2025}
+}
 }
 ```
 
