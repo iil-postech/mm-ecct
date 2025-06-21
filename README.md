@@ -46,7 +46,6 @@ python Main.py --ecct_type=DM --gpu=0 --N_dec=3 --d_model=128 --code_type=BCH --
   month = jul,
   year={2025}
 }
-}
 ```
 
 # License
