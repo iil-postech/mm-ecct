@@ -1,6 +1,7 @@
 # Multiple-Masks Error Correction Code Transformer for Short Block Codes
 
 This repository provides the official implementation of the IEEE Journal on Selected Areas in Communications "Multiple-Masks Error Correction Code Transformer for Short Block Codes"
+
 Paper link: https://doi.org/10.1109/JSAC.2025.3559154
 
 # Proposed Architecture of MM-ECCT
