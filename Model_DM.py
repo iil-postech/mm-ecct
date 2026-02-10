@@ -3,7 +3,7 @@ Implementation of "Multiple-Masks Error Correction Code Transformer for Short Bl
 Information and Intelligence Lab (IIL)
 Department of Electrical Engineering, Graduate School of Artificial Intelligence
 Pohang University of Science and Technology (POSTECH), South Korea.
-@author: Seong-Joon Park, seongjoon@postech.ac.kr, joonpark2247@gmail.com
+@author: Seong-Joon Park, joonpark2247@gmail.com
 """
 
 from torch.nn import LayerNorm
